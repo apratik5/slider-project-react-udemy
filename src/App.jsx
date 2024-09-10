@@ -4,8 +4,8 @@ import SlickCarousel from "./SlickCarousel";
 const App = () => {
   return (
     <main>
-      {/* <Carousel /> */}
-      <SlickCarousel />
+      <Carousel />
+      {/* <SlickCarousel /> */}
     </main>
   );
 };

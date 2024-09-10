@@ -1,22 +1,21 @@
 import { useEffect, useState } from 'react'
-import { shortList, longList, list } from './data'
+import { longList } from './data'
 import { FaQuoteRight } from 'react-icons/fa';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const Carousel = () => {
-    const [people, setPeople] = useState(longList);
     const [currentPerson, setCurrentPerson] = useState(0);
 
     const prevSlide = () => {
         setCurrentPerson((oldPerson) => {
-            const result = (oldPerson - 1 + people.length) % people.length;
+            const result = (oldPerson - 1 + longList.length) % longList.length;
             return result;
         })
     }
 
     const nextSlide = () => {
         setCurrentPerson((oldPerson) => {
-            const result = (oldPerson + 1) % people.length;
+            const result = (oldPerson + 1) % longList.length;
             return result;
         })
     }
@@ -31,7 +30,7 @@ const Carousel = () => {
     return (
         <section className='slider-container'>
             {
-                people.map((person, index) => {
+                longList.map((person, index) => {
                     const { id, image, name, title, quote } = person;
                     return <article
                         className="slide"
